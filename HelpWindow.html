@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>{PROJECT_NAME} - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Hospital Management System 2K18 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>{PROJECT_NAME} - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>Hospital Management System 2K18 - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team W14-3</code>      Since: <code>September 2018</code>      Licence: <code>MIT</code></p>
@@ -16,7 +16,7 @@
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#checking-in-a-patient-code-checkin-code">3.2. Checking in a patient: <code>checkin</code></a></li>
 <li><a href="#checking-out-a-patient-code-checkout-code">3.3. Checking out a patient: <code>checkout</code></a></li>
-<li><a href="#view-patient-queue-code-patient_queue_command-code">3.4. View patient queue: <code>{PATIENT_QUEUE_COMMAND}</code></a></li>
+<li><a href="#view-patient-queue-code-viewqueue-code">3.4. View patient queue: <code>viewqueue</code></a></li>
 <li><a href="#view-patient-s-medical-history-code-viewmh-code">3.5. View patient’s medical history: <code>viewmh</code></a></li>
 <li><a href="#add-to-patient-s-medical-history-code-addmh-code">3.6. Add to patient’s medical history: <code>addmh</code></a></li>
 <li><a href="#view-patient-s-dietary-needs-code-viewdiet-code">3.7. View patient’s dietary needs: <code>viewdiet</code></a></li>
@@ -39,7 +39,9 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>{PROJECT_INTRODUCTION}<br>
+<p>Hospital Management System 2K18 is for hospital administrators, doctors, nurses, and pharmacists who prefer to use a desktop app to manage patients and their associated data.<br>
+More importantly, Hospital Management System 2K18 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).<br>
+If you can type fast, Hospital Management System 2K18 can get your hospital management tasks doen faster than traditional GUI apps.<br>
 Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
@@ -53,10 +55,10 @@ Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#82
 <p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>{PROJECT_JAR_RELASE_NAME}.jar</code> <a href="https://github.com/nus-cs2103t-w14-3/main/releases">here</a>.</p>
+<p>Download the latest <code>hm2k18.jar</code> <a href="https://github.com/CS2103-AY1819S1-W14-3/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your {PROJECT_NAME}.</p>
+<p>Copy the file to the folder you want to use as the home folder for your Hospital Management System 2K18.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -216,12 +218,12 @@ You must have the appropriate permissions to invoke this command.
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-patient-queue-code-patient_queue_command-code"><a class="link" href="#view-patient-queue-code-patient_queue_command-code">3.4. View patient queue: <code>{PATIENT_QUEUE_COMMAND}</code></a></h3>
+<h3 id="view-patient-queue-code-viewqueue-code"><a class="link" href="#view-patient-queue-code-viewqueue-code">3.4. View patient queue: <code>viewqueue</code></a></h3>
 <div class="paragraph">
 <p>View the current patient queue.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>{PATIENT_QUEUE_COMMAND}</code></p>
+<p>Format: <code>viewqueue</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -229,7 +231,7 @@ You must have the appropriate permissions to invoke this command.
 <div class="ulist">
 <ul>
 <li>
-<p><code>{PATIENT_QUEUE_COMMAND}</code></p>
+<p><code>viewqueue</code></p>
 </li>
 </ul>
 </div>
@@ -609,6 +611,10 @@ e.g. <code>checkin S1234567A</code>; <code>n/Ling Zhi Yu p/91234567 a/6 College 
 e.g. <code>checkout S1234567A</code></p>
 </li>
 <li>
+<p><strong>View patient queue</strong> : <code>viewqueue</code><br>
+e.g. <code>viewqueue</code></p>
+</li>
+<li>
 <p><strong>View medical history</strong> : <code>viewmh NRIC</code><br>
 e.g. <code>viewmh S1234567A</code></p>
 </li>
@@ -647,4 +653,4 @@ e.g. <code>viewvisitors p/Ling Zhiyu</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-18 09:19:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-19 02:00:23 UTC</div></div></div></body></html>
