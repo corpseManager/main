@@ -21,7 +21,7 @@
 <li><a href="#add-to-patient-s-medical-history-code-addmh-code">3.6. Add to patient’s medical history: <code>addmh</code></a></li>
 <li><a href="#view-patient-s-dietary-needs-code-viewdiet-code">3.7. View patient’s dietary needs: <code>viewdiet</code></a></li>
 <li><a href="#add-patient-s-dietary-needs-code-adddiet-code">3.8. Add patient’s dietary needs: <code>adddiet</code></a></li>
-<li><a href="#view-patient-s-medication-code-viewmeds-code">3.9. View patient’s medication: <code>viewmeds</code></a></li>
+<li><a href="#view-patient-s-medication-ui-functionality">3.9. View patient’s medication: UI functionality</a></li>
 <li><a href="#add-patient-medication-code-addmeds-code">3.10. Add patient medication: <code>addmeds</code></a></li>
 <li><a href="#sign-in-patient-s-visitors-code-visitorin-code">3.11. Sign in patient’s visitors: <code>visitorin</code></a></li>
 <li><a href="#sign-out-patient-s-visitors-code-visitorout-code">3.12. Sign out patient’s visitors: <code>visitorout</code></a></li>
@@ -258,7 +258,7 @@ You must have the appropriate permissions to invoke this command.
 </div>
 </div>
 <div class="paragraph">
-<p>Format: <code>viewmh NRIC</code>​</p>
+<p>Format: <code>viewmh ic/NRIC</code>​</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -266,7 +266,7 @@ You must have the appropriate permissions to invoke this command.
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewmh S1234567A</code></p>
+<p><code>viewmh ic/S1234567A</code></p>
 </li>
 </ul>
 </div>
@@ -274,7 +274,7 @@ You must have the appropriate permissions to invoke this command.
 <div class="sect2">
 <h3 id="add-to-patient-s-medical-history-code-addmh-code"><a class="link" href="#add-to-patient-s-medical-history-code-addmh-code">3.6. Add to patient’s medical history: <code>addmh</code></a></h3>
 <div class="paragraph">
-<p>Add to a patient’s medical history.</p>
+<p>Add a diagnosis entry to a patient’s medical history.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -293,14 +293,17 @@ You must have the appropriate permissions to invoke this command.
 </div>
 </div>
 <div class="paragraph">
-<p>Format: <code>addmh NRIC</code>​</p>
+<p>Format: <code>addmh ic/NRIC mh/diagnosis​</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>This will prompt the user for more input, to which the user will write an entry. Pressing ‘Enter’ again will submit the entry.</p>
+<p>This will prompt the user for more input, to which the user will write an entry.</p>
+</li>
+<li>
+<p>Pressing ‘Enter’ again will submit the entry.</p>
 </li>
 </ul>
 </div>
@@ -312,14 +315,8 @@ You must have the appropriate permissions to invoke this command.
 <div class="ulist">
 <ul>
 <li>
-<p><code>addmh S1234567A</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>“Saw a patient today for flu. Prescribed 2 weeks of panadol, advised patient to rest and rehydrate.”</code></p>
-</li>
-</ul>
-</div>
+<p><code>addmh ic/S1234567A mh/ Saw a patient today for flu. Prescribed 2 weeks of panadol, advised patient to
+rest and rehydrate.</code></p>
 </li>
 </ul>
 </div>
@@ -413,7 +410,7 @@ You must have the appropriate permissions to invoke this command.
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-patient-s-medication-code-viewmeds-code"><a class="link" href="#view-patient-s-medication-code-viewmeds-code">3.9. View patient’s medication: <code>viewmeds</code></a></h3>
+<h3 id="view-patient-s-medication-ui-functionality"><a class="link" href="#view-patient-s-medication-ui-functionality">3.9. View patient’s medication: UI functionality</a></h3>
 <div class="paragraph">
 <p>View a patient’s medication history.</p>
 </div>
@@ -426,7 +423,7 @@ You must have the appropriate permissions to invoke this command.
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-You must have the appropriate permissions to invoke this command.
+You must have the appropriate permissions to invoke this functionality.
 </td>
 </tr>
 </table>
@@ -434,17 +431,7 @@ You must have the appropriate permissions to invoke this command.
 </div>
 </div>
 <div class="paragraph">
-<p>Format: <code>viewmeds NRIC</code>​</p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>viewmeds S1234567A</code></p>
-</li>
-</ul>
+<p>Simply click on the person&#8217;s card and the panel on the right will display his prescribed medication.</p>
 </div>
 </div>
 <div class="sect2">
@@ -469,31 +456,7 @@ You must have the appropriate permissions to invoke this command.
 </div>
 </div>
 <div class="paragraph">
-<p>Format: <code>addmeds NRIC</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>This will prompt the user for more information on the medication to prescribe, to be submitted in this format:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>d/DRUG_NAME q/QUANTITY_PER_DOSE n/ DOSES_PER_DAY t/DURATION_IN_DAYS</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Entering an empty line will submit the medication.</p>
-</li>
-<li>
-<p>Entering an empty line twice will end the medication submission.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Format: <code>addmeds ic/NRIC d/DRUG_NAME q/QUANTITY_PER_DOSE u/DOSAGE_UNIT n/DOSES_PER_DAY t/DURATION_IN_DAYS</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -501,14 +464,7 @@ You must have the appropriate permissions to invoke this command.
 <div class="ulist">
 <ul>
 <li>
-<p><code>addmeds S1234567A</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>d/Paracetamol q/2 tablets n/4 t/14</code></p>
-</li>
-</ul>
-</div>
+<p><code>addmeds ic/S1234567A d/Paracetamol q/2 u/tablets n/4 t/14</code></p>
 </li>
 </ul>
 </div>
@@ -653,4 +609,4 @@ e.g. <code>viewvisitors p/Ling Zhiyu</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-19 02:00:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-04 03:17:14 UTC</div></div></div></body></html>
